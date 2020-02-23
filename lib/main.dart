@@ -58,7 +58,7 @@ class MyPage extends StatelessWidget {
           for (int i = 0; i < list.length; i++)
             Container(
               color: Colors.white30,
-              child: FlatButton(
+              child: RaisedButton(
                 color: Colors.blueGrey,
                 textColor: Colors.black87,
                 padding: EdgeInsets.all(10.0),
@@ -72,6 +72,7 @@ class MyPage extends StatelessWidget {
                   );
                   assetsAudioPlayer.play();
                 },
+
                 child: Text(
                   list[i],
                   style: TextStyle(fontSize: 20.0),
