@@ -1,0 +1,32 @@
+name: basic_phrases
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^0.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  assets_audio_player: ^1.2.3
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - res/doyouspeaken.mp3
+    - res/ehesvagyok.mp3
+    - res/goodevening.mp3
+    - res/meinnameist.mp3
+    - res/please.mp3
+    - res/undeestebarul_japoneza.mp3
+    - res/welcome.mp3
+    - res/wiegehtesdir.mp3
