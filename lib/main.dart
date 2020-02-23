@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyPage extends StatelessWidget {
-  final assetsAudioPlayer = AssetsAudioPlayer();
+  final AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
   final List<String> list = <String>[
     'Vorbesti engleza?',
     'Imi este foame',
@@ -26,7 +26,7 @@ class MyPage extends StatelessWidget {
     'Numele meu este',
     'Te rog',
     'Unde este barul?',
-    'Bine venit',
+    'Bun venit',
     'Cum esti?',
   ];
 
@@ -45,7 +45,7 @@ class MyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Basic phrases'),
+        title: const Text('Basic phrases'),
         centerTitle: true,
       ),
       body: GridView.count(
@@ -53,29 +53,34 @@ class MyPage extends StatelessWidget {
         mainAxisSpacing: 12.0,
         crossAxisSpacing: 12.0,
         childAspectRatio: 1.4,
-        padding: EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(12.0),
         children: <Widget>[
           for (int i = 0; i < list.length; i++)
             Container(
               color: Colors.white30,
               child: RaisedButton(
                 color: Colors.blueGrey,
-                textColor: Colors.black87,
-                padding: EdgeInsets.all(10.0),
+                textColor: Colors.black54,
+                padding: const EdgeInsets.all(10.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30.0),
                 ),
                 splashColor: Colors.blueAccent,
                 onPressed: () {
-                  assetsAudioPlayer.open(
-                    audio[i],
-                  );
-                  assetsAudioPlayer.play();
+                  assetsAudioPlayer
+                    ..open(audio[i])
+                    ..play();
                 },
-
+                elevation: 12.0,
                 child: Text(
                   list[i],
-                  style: TextStyle(fontSize: 20.0),
+                  style: const TextStyle(shadows: <Shadow>[
+                    Shadow(
+                      blurRadius: 4.0,
+                      color: Colors.black54,
+                      offset: Offset(1.0, 1.0),
+                    ),
+                  ], fontSize: 20.0),
                   textAlign: TextAlign.center,
                 ),
               ),
