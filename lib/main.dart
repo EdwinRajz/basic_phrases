@@ -57,6 +57,7 @@ class MyPage extends StatelessWidget {
         children: <Widget>[
           for (int i = 0; i < list.length; i++)
             Container(
+              color: Colors.white30,
               child: FlatButton(
                 color: Colors.blueGrey,
                 textColor: Colors.black87,
